@@ -5,7 +5,6 @@ fixture `range manipulation`
 
 test(`Modify input range value`, async t => {
     const selection = Selector('#cowbell');
-    selection.value    
    await t
         .typeText(selection,'r',{ caretPos: 90 })
         
