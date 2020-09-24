@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Range element manipulation</title>
-</head>
-<body>
+import { Selector } from 'testcafe';
 
+fixture `range manipulation`
+    .page `./index.html`;
 
-<input type="range" id="cowbell" name="cowbell" 
-         min="10" max="300"  >
+test(`Select an option from the drop-down menu`, async t => {
+    
+    const range = Selector("input");
+   await t
+   .typeText(range.nth(1),"20")
+   .expect(range.nth(1).value).eql("20")
+   .typeText(range.nth(2),"80")
+   .expect(range.nth(2).value).eql("80")
 
-</body>
-</html>
+   
+});
